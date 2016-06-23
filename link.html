@@ -56,13 +56,13 @@
 		<tr>
 			<td colspan="3">
 				<div id="dview">
-				<iframe id="iview" name="iview"></iframe>
+				
 				</div>
 			</td>
 		</tr>
 	</table>
 	</form>		
-
+<div id="iview" name="iview"></div>
 <script>
 	<!--
 		var url,text,T1,T2,ftxt;
@@ -77,7 +77,7 @@
 		}
 		function OnUpdateView()
 		{
-			window.frames["iview"].document.body.innerHTML = TA1.value;
+			document.getElementById('iview').innerHTML = TA1.value;
 		}
 		function OnSelectCode()
 		{
@@ -88,12 +88,7 @@
 			text2 = T1.value;
 			url2  = T2.value;
 
-			txt = '<!DOCTYPE html>\n';
-			txt+= '<html lang="en">\n<head>\n';
-			txt+= '</head>\n';
-			txt+= '<body>\n';
-			txt+= ' <a href="'+url2+'">'+text2+'</a>\n';
-			txt+= '</body>\n</html>';
+			txt= '<a href="'+url2+'">'+text2+'</a>\n';
 			TA1.value = txt;
 			OnUpdateView();
 		}

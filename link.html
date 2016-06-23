@@ -22,20 +22,12 @@
 	<p style="display:none;">Select link type:</p>
 	<table class="calc">
 		<tr>
-			<td>Enter link text:</td>
+			<td>Enter URL:</td>
 			<td>&nbsp;</td>
 			<td>&nbsp;</td>
 		</tr>
 		<tr>
-			<td colspan="3"><input type="text" id="T1" style="color:#aaa;" onclick="ResetText(this,0)" onblur="ResetText(this,1)" value="The Link Text"></td>
-		</tr>
-		<tr>
-			<td>Enter URL to link to:</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td colspan="3"><input type="text" id="T2" style="color:#aaa;" onclick="ResetText(this,0)" onblur="ResetText(this,1)" value="http://www.rapidtables.com/web/tools/linked-page.htm"></td>
+			<td colspan="3"><input type="text" id="T2" style="color:#aaa;" onclick="ResetText(this,0)" onblur="ResetText(this,1)" value="hipaabridge://"></td>
 		</tr>
 		<tr>
 			<td colspan="3">
@@ -65,12 +57,10 @@
 <div id="iview" name="iview"></div>
 <script>
 	<!--
-		var url,text,T1,T2,ftxt;
+		var url,T2,ftxt;
 		window.onload = new function()
 		{
-			url = "http://www.rapidtables.com/web/tools/linked-page.htm";
-			text = "The Link Text";
-			T1 = document.getElementById('T1');
+			url = "hipaabridge://";
 			T2 = document.getElementById('T2');
 			TA1 = document.getElementById('TA1');
 			ResetButton();
@@ -85,20 +75,16 @@
 		}
 		function GenerateButton() 
 		{
-			text2 = T1.value;
 			url2  = T2.value;
 
-			txt= '<a href="'+url2+'">'+text2+'</a>\n';
+			txt= '<a href="'+url2+'">'+url2+'</a>\n';
 			TA1.value = txt;
 			OnUpdateView();
 		}
 		function ResetButton() 
 		{
-			url = "http://www.rapidtables.com/web/tools/linked-page.htm";
-			text = "The Link Text";
-			T1.value = text;
+			url = "hipaabridge://";
 			T2.value = url;
-			T1.style.color = "#aaa";
 			T2.style.color = "#aaa";
 			GenerateButton();
 		}
@@ -106,7 +92,7 @@
 		{
 			if( op==0 ) // onclick
 			{
-				if( (obj==T1 && obj.value==text)||(obj==T2 && obj.value == url) )
+				if( (obj==T2 && obj.value == url) )
 				{
 					obj.value = "";
 					obj.style.color = "#000";
@@ -116,10 +102,7 @@
 			{
 				if( obj.value == "" )
 				{
-					if( obj==T1 )
-						obj.value = text;
-					else
-						obj.value = url;
+					obj.value = url;
 					obj.style.color = "#aaa";
 				}
 			}

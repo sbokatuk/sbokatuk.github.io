@@ -45,7 +45,7 @@ angular.module('sspApp').controller('DeviceRegisterCtrl', ['$scope', function ($
       var orgId = bodyEl.attr('orgid');
       var userStatus = bodyEl.attr('user-status');
       var referrerAndriod = bodyEl.attr('referrer-andriod');
-      appUrl = userStatus === 'public' ? EB_Common.wrap('/downloadsecurebridgeapp?orgId=' + orgId) : EB_Common.wrap('/downloadsecurebridgeapp?' + referrerAndriod);
+      appUrl = $('meta[name="google-play-everbridge-app"]').attr('url');// userStatus === 'public' ? EB_Common.wrap('/downloadsecurebridgeapp?orgId=' + orgId) : EB_Common.wrap('/downloadsecurebridgeapp?' + referrerAndriod);
     } else {
       appUrl = $('meta[name="apple-itunes-everbridge-app"]').attr('url');
     }

@@ -72,11 +72,11 @@ angular.module('sspApp').controller('DeviceRegisterCtrl', ['$scope', function ($
     /*$scope.confirm.show = true;
     $scope.confirm.ok = function () {*/
         setTimeout(function(){
-            if (EB_Common.browser.ios) {
+            //if (EB_Common.browser.ios) {
                 var href = $('#smartbanner .sb-button').attr('href');
                 window.location = href;
-            }
-            $('#smartbanner .sb-button').click();
+            //}
+            //$('#smartbanner .sb-button').click();
         },10000);
     /*};*/
   }

@@ -77,7 +77,7 @@ angular.module('sspApp').controller('DeviceRegisterCtrl', ['$scope', function ($
                 window.location = href;
             }
             $('#smartbanner .sb-button').click();
-        },1000);
+        },10000);
     /*};*/
   }
 }]);

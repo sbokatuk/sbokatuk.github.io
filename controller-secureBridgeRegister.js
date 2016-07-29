@@ -45,7 +45,7 @@ angular.module('sspApp').controller('DeviceRegisterCtrl', ['$scope', function ($
       var orgId = bodyEl.attr('orgid');
       var userStatus = bodyEl.attr('user-status');
       var referrerAndriod = bodyEl.attr('referrer-andriod');
-      appUrl = 'intent://scan/#Intent;scheme=securebridge;package=com.tapestrytelemed.securebridge.android.v3;end';  //$('meta[name="google-play-everbridge-app"]').attr('url');// userStatus === 'public' ? EB_Common.wrap('/downloadsecurebridgeapp?orgId=' + orgId) : EB_Common.wrap('/downloadsecurebridgeapp?' + referrerAndriod);
+      appUrl = 'intent://scan/#Intent;scheme=securebridge;package=com.tapestrytelemed.securebridge.android.v3;path=%2F%3ForgId%3Djsspreset2FaWjtMtad2bdVo8pxNXnAsspreset3Dsspreset3D&contactId%3DS8RvuDeUFOkQUeY0J8ai5Qsspreset3Dsspreset3D&time%3DFzBONnROTsspreset2F3mbGd4HwYvCgsspreset3Dsspreset3D&key%3DL4UQonrTXnAsspreset3D&ssoPhrase%3D;end';  //$('meta[name="google-play-everbridge-app"]').attr('url');// userStatus === 'public' ? EB_Common.wrap('/downloadsecurebridgeapp?orgId=' + orgId) : EB_Common.wrap('/downloadsecurebridgeapp?' + referrerAndriod);
     } else {
       appUrl = $('meta[name="apple-itunes-everbridge-app"]').attr('url');
     }

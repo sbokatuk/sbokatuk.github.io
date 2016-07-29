@@ -70,7 +70,7 @@ angular.module('sspApp').controller('DeviceRegisterCtrl', ['$scope', function ($
       }
     });
     /*$scope.confirm.show = true;
-    $scope.confirm.ok = function () {*/
+    $scope.confirm.ok = function () {
         setTimeout(function(){
             if (EB_Common.browser.ios) {
                 var href = $('#smartbanner .sb-button').attr('href');
@@ -78,6 +78,6 @@ angular.module('sspApp').controller('DeviceRegisterCtrl', ['$scope', function ($
             }
             $('#smartbanner .sb-button').click();
         },100);
-    /*};*/
+    };*/
   }
 }]);

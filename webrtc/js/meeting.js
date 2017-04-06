@@ -54,11 +54,11 @@
                     client.setEncryptionSecret(secret);
                 }
                 if (mode) {
-                    client.setChannelProfile(mode, function() {
-                        console.log('setChannelProfile is success');
-                    }, function() {
-                        console.log('setChannelProfile is faild');
-                    });
+                    //client.setChannelProfile(mode, function() {
+                    //    console.log('setChannelProfile is success');
+                    //}, function() {
+                    //    console.log('setChannelProfile is faild');
+                    //});
                 }
                 try {
                     client.setEncryptionMode(type);

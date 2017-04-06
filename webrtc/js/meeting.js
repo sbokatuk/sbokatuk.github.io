@@ -50,22 +50,6 @@
             client.init(key, function(obj) {
                 console.log("AgoraRTC client initialized");
 
-                if (secret) {
-                    client.setEncryptionSecret(secret);
-                }
-                if (mode) {
-                    //client.setChannelProfile(mode, function() {
-                    //    console.log('setChannelProfile is success');
-                    //}, function() {
-                    //    console.log('setChannelProfile is faild');
-                    //});
-                }
-                try {
-                    client.setEncryptionMode(type);
-                } catch (err) {
-                    console.log(err);
-                }
-
                 client.join(channel, 0, function(uid) {
                     console.log("User " + uid + " join channel successfully");
                     console.log("Timestamp: " + Date.now());

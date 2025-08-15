@@ -4,16 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sergey Bokatuk — Lead Software Engineer</title>
-  <meta name="description" content="Lead Software Engineer with 17 years of experience across .NET, WPF, MAUI, Xamarin, native Android/iOS, and backend .NET Core.">
+  <meta name="description" content="Lead Software Engineer with 15+ years of experience across .NET, WPF, MAUI, Xamarin, native Android/iOS, and backend .NET Core.">
   <link rel="icon" href="/webrtc/images/favicon.ico">
   <link rel="canonical" href="https://bokatuk.com/">
   <meta property="og:title" content="Sergey Bokatuk — Lead Software Engineer">
-  <meta property="og:description" content="Lead Software Engineer with 17 years across .NET, WPF, MAUI, Xamarin, native Android/iOS, and backend .NET Core.">
+  <meta property="og:description" content="Lead Software Engineer with 15+ years across .NET, WPF, MAUI, Xamarin, native Android/iOS, and backend .NET Core.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://bokatuk.com/">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Sergey Bokatuk — Lead Software Engineer">
-  <meta name="twitter:description" content="Lead Software Engineer with 17 years across .NET, WPF, MAUI, Xamarin, native Android/iOS, and backend .NET Core.">
+  <meta name="twitter:description" content="Lead Software Engineer with 15+ years across .NET, WPF, MAUI, Xamarin, native Android/iOS, and backend .NET Core.">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -59,7 +59,7 @@
   <main class="wrap">
     <header class="hero">
       <h1>Sergey Bokatuk</h1>
-      <h2>Lead Software Engineer — 17 years</h2>
+      <h2>Lead Software Engineer — <span id="years"></span> years of production experience</h2>
       <p class="lead">I design and build reliable cross‑platform apps and scalable services using <strong>.NET</strong>. My toolkit spans desktop (<strong>WPF</strong>), mobile (<strong>MAUI</strong>, <strong>Xamarin</strong>, <strong>native Android</strong>, <strong>native iOS</strong>), and backend (<strong>.NET Core</strong>/<strong>ASP.NET Core</strong>).</p>
       <p>I lead cross‑functional teams, shape system architecture, and deliver production software end‑to‑end. I own roadmaps, quality, code reviews, and mentoring, and I stay hands‑on to unblock critical paths. Focus areas: availability, performance, security, and developer productivity.</p>
       <a class="cta" href="mailto:s@bokatuk.com">Email: s@bokatuk.com</a>
@@ -133,7 +133,17 @@
       <span>&copy; <span id="y"></span> bokatuk.com</span>
     </footer>
   </main>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <script>
+    (function(){
+      var now = new Date();
+      var year = now.getFullYear();
+      var yearsExp = Math.max(0, year - 2008);
+      var yEl = document.getElementById('y');
+      if (yEl) yEl.textContent = year;
+      var yearsEl = document.getElementById('years');
+      if (yearsEl) yearsEl.textContent = yearsExp;
+    })();
+  </script>
   </body>
   </html>
 

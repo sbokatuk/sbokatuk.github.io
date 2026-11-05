@@ -1,0 +1,142 @@
+/* SIM Bridge pages: simbridge/index.html, simbridge/ru/index.html, simbridge/privacy.html */
+
+/* Google Play. While the app is not public on Play, the "coming soon" badge shows.
+   To switch the real link on for every page, change the next line to:  .play.play-soon { display: none; }  */
+.play.play-live { display: none; }
+
+:root {
+  color-scheme: light dark;
+  --bg: #ffffff;
+  --bg-soft: #f1f7f5;
+  --surface: #ffffff;
+  --fg: #162120;
+  --muted: #56635f;
+  --line: #d8e2de;
+  --accent: #006a60;
+  --accent-ink: #ffffff;
+  --accent-soft: #dcf1ec;
+  --link: #00675d;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0e1413;
+    --bg-soft: #131b1a;
+    --surface: #172120;
+    --fg: #e2eae7;
+    --muted: #a0b1ac;
+    --line: #2a3633;
+    --accent: #4fd8c4;
+    --accent-ink: #00201c;
+    --accent-soft: #12312c;
+    --link: #6fe3d1;
+  }
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, "Noto Sans", Helvetica, Arial, sans-serif;
+}
+a { color: var(--link); text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+img { max-width: 100%; height: auto; }
+code { font-size: .92em; overflow-wrap: anywhere; }
+
+.wrap { max-width: 960px; margin: 0 auto; padding-inline: 16px; }
+.narrow { max-width: 720px; }
+
+/* Top bar */
+.top { border-bottom: 1px solid var(--line); }
+.top-in { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 60px; }
+.brand { display: inline-flex; align-items: center; gap: 10px; color: var(--fg); font-weight: 700;
+         font-size: 1.05rem; text-decoration: none; white-space: nowrap; }
+.brand img { width: 32px; height: 32px; border-radius: 8px; display: block; }
+.top-nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 4px 16px; font-size: .95rem; }
+.top-nav a { color: var(--muted); text-decoration: none; padding: 6px 0; }
+.top-nav a:hover { color: var(--fg); }
+@media (max-width: 520px) { .top-nav .wide-only { display: none; } }
+
+/* Language hint for visitors whose browser prefers Russian */
+.lang-hint { background: var(--accent-soft); font-size: .95rem; }
+.lang-hint p { margin: 0; padding: 10px 0; }
+
+/* Hero */
+.hero { padding-block: 48px 40px; display: grid; gap: 32px; align-items: center; }
+@media (min-width: 760px) {
+  .hero { grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); padding-block: 72px 56px; }
+}
+.eyebrow { margin: 0 0 8px; color: var(--accent); font-weight: 600; font-size: .95rem; letter-spacing: .01em; }
+h1 { font-size: clamp(2.3rem, 7vw, 3.4rem); line-height: 1.08; margin: 0 0 16px; letter-spacing: -.02em; }
+.lead { font-size: 1.15rem; margin: 0 0 24px; max-width: 34em; }
+.actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 24px 0 0; }
+.chips li { border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; font-size: .9rem; color: var(--muted); }
+
+/* Google Play badge (no Google logo: the official badge is for live listings only) */
+.play { display: inline-flex; flex-direction: column; justify-content: center; min-height: 56px; padding: 6px 22px;
+        border-radius: 12px; text-decoration: none; line-height: 1.2; }
+.play small { font-size: .78rem; }
+.play strong { font-size: 1.2rem; }
+a.play { background: var(--accent); color: var(--accent-ink); }
+a.play:hover { filter: brightness(1.08); }
+span.play { border: 1.5px dashed var(--line); color: var(--muted); background: var(--bg-soft); }
+span.play strong { color: var(--fg); }
+
+/* Watch picture */
+.shot { margin: 0; display: grid; justify-items: center; gap: 18px; text-align: center; }
+.watch { width: min(280px, 72vw); aspect-ratio: 1; border-radius: 50%; background: #000; padding: 12px;
+         box-shadow: 0 0 0 9px #2c3130, 0 0 0 11px #4b5250, 0 18px 40px rgba(0, 0, 0, .25); }
+.watch img { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.shot figcaption { color: var(--muted); font-size: .9rem; max-width: 26em; }
+
+/* Sections */
+.band { background: var(--bg-soft); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+section { padding-block: 48px; }
+h2 { font-size: clamp(1.5rem, 4vw, 1.9rem); line-height: 1.2; margin: 0 0 8px; letter-spacing: -.01em; }
+.sub { color: var(--muted); margin: 0 0 28px; max-width: 40em; }
+
+.grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); list-style: none;
+        padding: 0; margin: 0; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 20px; }
+.card h3 { display: flex; align-items: center; gap: 10px; font-size: 1.08rem; margin: 0 0 10px; }
+.card h3 svg { flex: none; width: 36px; height: 36px; padding: 7px; border-radius: 10px;
+               background: var(--accent-soft); color: var(--accent); }
+.card ul { margin: 0; padding-left: 20px; }
+.card li { margin: 0 0 6px; }
+.card li:last-child { margin-bottom: 0; }
+.card p { margin: 0; }
+
+.models .card h3 { font-size: 1.25rem; }
+.note { margin: 24px 0 0; color: var(--muted); max-width: 46em; }
+
+/* FAQ */
+.faq { max-width: 760px; margin-top: 20px; }
+.faq details { border-bottom: 1px solid var(--line); }
+.faq details:first-of-type { border-top: 1px solid var(--line); }
+.faq summary { cursor: pointer; padding: 14px 0; font-weight: 600; }
+.faq details p { margin: 0 0 16px; }
+
+/* Disclaimer */
+.disclaimer { border-left: 4px solid var(--accent); background: var(--bg-soft); border-radius: 0 12px 12px 0;
+              padding: 16px 20px; max-width: 760px; }
+.disclaimer p { margin: 0 0 8px; }
+.disclaimer p:last-child { margin: 0; color: var(--muted); font-size: .92rem; }
+
+/* Footer */
+.foot { border-top: 1px solid var(--line); padding-block: 28px 40px; color: var(--muted); font-size: .92rem; }
+.foot p { margin: 0 0 6px; }
+.foot nav { display: flex; flex-wrap: wrap; gap: 6px 20px; margin-bottom: 12px; }
+
+/* Privacy policy */
+.policy { padding-top: 32px; padding-bottom: 56px; }
+.policy h1 { font-size: clamp(1.7rem, 5vw, 2.1rem); line-height: 1.25; margin: 0 0 4px; letter-spacing: -.01em; }
+.policy h2 { font-size: 1.25rem; margin: 32px 0 8px; }
+.policy p, .policy li { margin: 0 0 10px; }
+.policy ul { padding-left: 22px; }
+.policy .muted { color: var(--muted); }
+.policy .lang { display: flex; gap: 16px; margin: 16px 0 24px; }
+.policy hr { border: 0; border-top: 1px solid var(--line); margin: 48px 0; }
